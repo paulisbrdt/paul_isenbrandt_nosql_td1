@@ -35,7 +35,14 @@ VALUES ('totu' , 'tot3' , 'C' , 26 );
 #Question
 #1) Quel parti politique a réuni le plus de voix ?
 
-SELECT Partie_politique where sum nbr_vote = SELECT max nbr_vote;
+#resultat pour le parti A
+SELECT SUM(nbr_vote), Partie_politique FROM candidat WHERE Partie_politique= 'A' ALLOW FILTERING;
+
+#resultat pour le parti B
+SELECT SUM(nbr_vote), Partie_politique FROM candidat WHERE Partie_politique= 'B' ALLOW FILTERING;
+
+#resultat pour le parti C
+SELECT SUM(nbr_vote), Partie_politique FROM candidat WHERE Partie_politique= 'C' ALLOW FILTERING;
 
 #2)Quel candidat a gagné les elections ? 
 
@@ -43,3 +50,5 @@ SELECT max(nbr_vote), Partie_politique, Nom_P, Prenom_P FROM candidat;
 
 #3) Le candidat ayant gagné les elections vient-il du parti politique ayant eu la majorité des voix ? 
 
+
+  
